@@ -48,15 +48,24 @@ NPM
 npm i html-webpack-plugin -D
 ```
 
-**Configuración**}
+**Configuración:**
 ```javascript
-plugins: [
-        new HtmlWebpackPlugin({ 
-		inject: 'body',
-		template: './public/index.html'
-		filename: './index.html'
+module.exports = {
+	...,
+	module: {
+    rules: [
+      ...
+    ]
+  },
+  plugins: [
+		...
+    new HtmlWebpackPlugin({ 
+      inject: 'body',
+      template: './public/index.html'
+      filename: './index.html'
 	})
-]
+  ]
+}
 ```
 
 ## Loader y Plugins
@@ -82,7 +91,7 @@ npm i mini-css-extract-plugin css-loader -D
 - mini-css-extract-plugin ⇒ Extrae el CSS en archivos.
 - Para comenzar debemos agregar las configuraciones de webpack
 
-**configuracion**
+**configuración:**
 ```javascript
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -124,7 +133,7 @@ npm i copy-webpack-plugin -D
 ```
 - Para poder comenzar a usarlo debemos agregar estas configuraciones a "webpack.config.js".
 
-**configuracion**
+**configuración:**
 ```javascript
 const CopyPlugin = require('copy-webpack-plugin');
 
@@ -151,7 +160,7 @@ module.exports = {
 - Puedes usar una forma de importar las imágenes haciendo un import de las mismas y generando una variable.
 - No es necesario instalar ninguna dependencia, webpack ya lo tiene incluido debemos agregar la siguiente configuración.
 
-**configuracion**
+**configuración:**
 ```javascript
 module.exports = {
 	...
@@ -180,7 +189,7 @@ npm install url-loader file-loader -D
 ```
 
 - Para aplicar esta configuración debes agregar la siguiente información: 
-**configuracion**
+**configuración:**
 ```javascript
 module: {
 	rules: [
@@ -223,7 +232,7 @@ optimization: {
 - Alias ⇒ nos permiten otorgar nombres paths específicos evitando los paths largos
 - Para crear un alias debes agregar la siguiente configuración a webpack
 
-**configuracion**
+**configuración:**
 ```js
 module.exports = {
 	...
@@ -261,7 +270,7 @@ API=https://randomuser.me/api/
 Es buena idea tener un archivo de ejemplo donde, el mismo si se pueda subir al repositorio como muestra de que campos van a ir
 Una vez creado el archivo .env debemos agregar la siguiente configuración en **webpack.config.js**
 
-**configuracion**
+**configuracion:**
 ```js
 const Dotenv = require('dotenv-webpack');
 module.exports = {
