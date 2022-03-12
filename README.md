@@ -96,18 +96,18 @@ npm i mini-css-extract-plugin css-loader -D
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-	...,
-	module: {
-    rules: [
-      {
-        test: /\.(css|\styl)$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-        ]
-      }
-    ]
-  },
+...,
+module: {
+  rules: [
+    {
+      test: /\.(css|\styl)$/i,
+      use: [
+        MiniCssExtractPlugin.loader,
+        "css-loader",
+      ]
+    }
+  ]
+},
   plugins: [
 		...
     new MiniCssExtractPlugin(),
